@@ -32,7 +32,7 @@ public class Utility {
 
     //解析和处理服务器返回的市级数据
     public static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB,String response,int provinceId){
-        if (TextUtils.isEmpty(response)){
+        if (!TextUtils.isEmpty(response)){
             String[] allCities = response.split(",");
             if (allCities != null && allCities.length > 0){
                 for (String c : allCities){
@@ -51,7 +51,7 @@ public class Utility {
 
     //解析和处理服务器返回的县级数据
     public static boolean handleCountiesResponse(CoolWeatherDB coolWeatherDB,String response,int cityId){
-        if (TextUtils.isEmpty(response)){
+        if (!TextUtils.isEmpty(response)){
             String[] allCounties = response.split(",");
             if (allCounties != null && allCounties.length > 0){
                 for (String c : allCounties){

@@ -28,11 +28,15 @@ public class HttpUtil {
                     while ((line = reader.readLine()) != null){
                         response.append(line);
                     }
+                    if (listener != null){
+                        listener.onFinish(response.toString());
+                    }
                 }
                 catch (Exception e){
-                    if (listener != null){
-                        listener.onError(e);
-                    }
+//                    if (listener != null){
+//                        listener.onError(e);
+//                    }
+                    e.printStackTrace();
                 }
                 finally {
                     if (connection != null){
